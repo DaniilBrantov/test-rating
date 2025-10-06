@@ -64,4 +64,6 @@ npx http-server -p 8000
 - Edge 79+
 
 Проект готов к использованию в production-среде после минификации и оптимизации ресурсов
+```bash
 sass --style=compressed scss/style.scss css/style.min.css
+```
