@@ -1,0 +1,376 @@
+// Импорты
+@import 'fonts';
+@import 'variables';
+@import 'reboot';
+@import 'mixins';
+
+// стили компонента
+.bookmakers-rating {
+  $self: &;
+
+  background: color('white');
+  border-radius: rem(16);
+  border: rem(1) solid color('light');
+  max-width: rem(810);
+  margin: rem(50) auto;
+
+  // Верхняя часть
+  &__top {
+    margin: rem(36) rem(20) rem(12) rem(30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // Меню с тремя точками
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+    align-items: center;
+    cursor: pointer;
+    width: rem(16);
+    height: rem(16);
+
+    &-item {
+      width: rem(4);
+      height: rem(4);
+      background-color: color('dark');
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  // Контейнер таблицы
+  &__table-container {
+    .tabs {
+      padding: rem(23) rem(24) 0;
+      border-top: rem(1) solid color('dark');
+      border-bottom: rem(1) solid color('dark');
+
+      &__row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__cell {
+        position: relative;
+        padding-bottom: rem(22);
+        font-family: $font-family-light;
+        font-size: rem(14);
+        cursor: pointer;
+
+        &.selected {
+          font-family: $font-family-base;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: rem(3);
+            background-color: color('green');
+            border-radius: rem(8);
+          }
+        }
+      }
+    }
+  }
+
+  // Кнопки
+  &__more-btn {
+    border: none;
+    background: transparent;
+    font-size: rem(15);
+    color: color('dark');
+    padding: 0;
+    display: flex;
+    gap: rem(5);
+    align-items: center;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken(color('dark'), 15%);
+
+      path {
+        fill: darken(color('dark'), 15%);
+      }
+    }
+
+    &-mobile {
+      font-size: rem(14);
+      background: color('white');
+      text-transform: uppercase;
+      width: auto;
+      padding: rem(22);
+      text-align: center;
+      border: rem(1) solid color('light');
+      border-radius: rem(8);
+      margin: 0 rem(16) rem(18);
+      display: none;
+
+      @include small-mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__info-btn {
+    border: none;
+    background: transparent;
+    font-size: rem(15);
+    text-decoration: underline;
+    color: color('green');
+    padding: 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken(color('green'), 15%);
+    }
+  }
+
+  // Футер
+  &__footer {
+    padding: rem(28) rem(20);
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s ease;
+
+    @include small-mobile {
+      padding: 0;
+    }
+  }
+
+  // Имя букмекера с иконкой проверки
+  .bookmaker-name {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: url('/images/verified.svg');
+      position: absolute;
+      top: rem(-7);
+      right: rem(-7);
+      width: rem(16);
+      height: rem(16);
+      pointer-events: none;
+    }
+
+    &.after-none::after {
+      display: none;
+    }
+
+    @include small-mobile {
+      max-width: rem(80);
+
+      &::after {
+        content: url("/images/verified-mobile.svg");
+        width: rem(12);
+        height: rem(12);
+      }
+    }
+  }
+}
+
+// Таблица
+.rating-table {
+  width: 100%;
+
+  &__row {
+    border-bottom: rem(1) solid color('light');
+    display: flex;
+    gap: rem(51);
+    padding: rem(10) rem(20);
+    height: rem(68);
+    align-items: center;
+
+    &:first-child {
+      @include mobile {
+        border-top: rem(1) solid color('light');
+      }
+    }
+
+    &:last-child {
+      @include small-mobile {
+        border-bottom: none;
+      }
+    }
+
+    @include tablet {
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      padding: rem(9) rem(12);
+    }
+
+    @include small-mobile {
+      height: rem(56);
+    }
+
+    @include extra-small-mobile {
+      justify-content: start;
+      gap: rem(10);
+    }
+  }
+
+  &__cell {
+    display: flex;
+    gap: rem(4);
+    align-items: center;
+
+    // Бонусы (скрывается на мобильных)
+    &--bonus {
+      width: rem(49);
+
+      @media screen and (max-width: 719px) {
+        display: none;
+      }
+    }
+
+    // Рейтинг
+    &--rating {
+      width: rem(124);
+
+      a {
+        display: flex;
+        gap: rem(4);
+        align-items: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: color('yellow');
+          text-decoration: underline;
+
+          path {
+            opacity: 0.8;
+          }
+        }
+
+        &:active {
+          color: darken(color('yellow'), 10%);
+          transform: translateY(rem(2));
+          transition: transform 0.1s ease, color 0.1s ease;
+
+          path {
+            opacity: 1;
+          }
+        }
+      }
+
+      @include mobile {
+        width: auto;
+
+        a {
+          text-decoration: underline;
+          font-size: rem(14);
+        }
+      }
+
+      @include small-mobile {
+        width: rem(20);
+        margin-left: rem(11);
+
+        a {
+          font-size: rem(12);
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+    }
+
+    // Надежность
+    &--reliability {
+      flex-direction: column;
+      gap: rem(2);
+      justify-content: center;
+      width: rem(96);
+
+      @include small-mobile {
+        width: rem(68);
+        gap: rem(2);
+      }
+    }
+
+    // Ссылки
+    &--links {
+      gap: rem(8);
+
+      @include small-mobile {
+        gap: rem(4);
+      }
+    }
+  }
+
+  // Бейджи надежности
+  .reliability {
+    &-amount {
+      display: flex;
+      gap: rem(4);
+      align-items: center;
+
+      @include mobile {
+        font-size: rem(14);
+      }
+
+      @include small-mobile {
+        font-size: rem(12);
+      }
+    }
+
+    &-badge {
+      font-size: rem(12);
+      border-radius: rem(30);
+      padding: rem(2) rem(6);
+      margin-top: rem(3);
+      white-space: nowrap;
+
+      &--exclusive {
+        background: color('purple-bg');
+        color: color('purple');
+      }
+
+      &--no-deposit {
+        background: color('green-bg');
+        color: color('green');
+      }
+
+      &--no-bonus {
+        background: color('red-bg');
+        color: color('red');
+      }
+
+      &--none {
+        padding: 0;
+      }
+
+      @include small-mobile {
+        font-size: rem(8);
+        padding: rem(2) rem(5);
+      }
+    }
+  }
+
+  // SVG иконки
+  svg {
+    @include mobile {
+      width: rem(14);
+      height: rem(14);
+    }
+
+    @include small-mobile {
+      width: rem(12);
+      height: rem(12);
+    }
+  }
+}
+
+@import 'buttons';
+@import 'utilities';
+@import 'adaptive';

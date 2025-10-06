@@ -1,0 +1,50 @@
+
+.h2 {
+    @include tablet {
+      font-size: rem(20);
+    }
+  
+    @include mobile {
+      font-size: rem(18);
+    }
+  }
+  
+
+@include tablet {
+    .bookmakers-rating {
+      margin: rem(18) rem(16);
+    }
+}
+  
+  @include mobile {
+    .bookmakers-rating {
+      &__top {
+        margin: rem(20) rem(16);
+      }
+  
+      &__table-container {
+        .tabs {
+          padding: rem(16) rem(16) 0 rem(16);
+  
+          &__cell {
+            padding-bottom: rem(14);
+          }
+  
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
+  @include small-mobile {
+    .bookmakers-rating {
+      margin: rem(17) rem(16) rem(8);
+      border-radius: rem(8);
+  
+      &__top {
+        margin: rem(18) rem(12);
+      }
+    }
+  }

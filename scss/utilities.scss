@@ -1,0 +1,20 @@
+// Утилиты отображения
+.mobile {
+    display: none;
+  
+    @include small-mobile {
+      display: block;
+    }
+  }
+  
+  .desktop {
+    display: flex;
+  
+    @include small-mobile {
+      display: none;
+    }
+  }
+
+.loading-message{
+    padding: rem(30);
+}

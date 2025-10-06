@@ -1,0 +1,49 @@
+
+
+// --- Цвета ---
+$colors: (
+  'dark': #262F56,
+  'bg': #E6E6E6,
+  'light': #D9EAFA,
+  'white': #fff,
+  'white-2': #F6F6F6,
+  'yellow': #ffa617,
+
+  'green': #00C659,
+  'green-bg': rgba(0, 198, 89, 0.12),
+
+
+  'purple': #B02BC8,
+  'purple-bg': rgba(176, 43, 200, 0.12),
+
+  'red': #C82B32,
+  'red-bg': rgba(200, 43, 50, 0.12),
+
+
+);
+
+
+
+
+// --- Типография ---
+$font-family-base: 'Rubik-Medium', sans-serif;
+$font-family-light: 'Rubik-Light', sans-serif;
+
+
+$base-font-size: 16;
+
+@function rem($px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+
+
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+
+
+
+

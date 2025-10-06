@@ -1,0 +1,100 @@
+{
+  "byuser": [
+    {
+      "id": 1,
+      "logo": "images/bookmaker-logo-1x.svg",
+      "rating": 4.9,
+      "review_count": 325,
+      "bonus_amount": 25000,
+      "badge": "exclusive",
+      "internal_link": "/bk/1",
+      "external_link": "https://partner1.com"
+    },
+    {
+      "id": 2,
+      "logo": "images/bookmaker-logo.svg",
+      "rating": 4.8,
+      "review_count": 123,
+      "bonus_amount": 101000,
+      "badge": "no-deposit",
+      "internal_link": "/bk/2",
+      "external_link": "https://partner2.com"
+    },
+    {
+      "id": 3,
+      "logo": "images/bookmaker-logo-1.svg",
+      "rating": 4.7,
+      "review_count": 325,
+      "bonus_amount": 10000,
+      "badge": "",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    },
+    {
+      "id": 4,
+      "logo": "images/bookmaker-logo-2.svg",
+      "rating": 4.6,
+      "review_count": 43,
+      "bonus_amount": 0,
+      "badge": "no-bonus",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    },
+    {
+      "id": 5,
+      "logo": "images/bookmaker-logo-3.svg",
+      "rating": 5.0,
+      "review_count": 34,
+      "bonus_amount": 2500,
+      "badge": "no-deposit",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    },
+    {
+      "id": 6,
+      "logo": "images/bookmaker-logo-1x.svg",
+      "rating": 4.5,
+      "review_count": 109,
+      "bonus_amount": 9900,
+      "badge": "",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    }
+  ],
+  "byeditors": [
+    {
+      "id": 3,
+      "logo": "images/bookmaker-logo-1.svg",
+      "rating": 4.7,
+      "review_count": 45,
+      "bonus_amount": 10000,
+      "badge": "",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    }
+  ],
+  "bybonus": [
+    {
+      "id": 4,
+      "logo": "images/bookmaker-logo-2.svg",
+      "rating": 4.7,
+      "review_count": 45,
+      "bonus_amount": 0,
+      "badge": "no-deposit",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    }
+  ],
+  "bysubrating": [
+    {
+      "id": 5,
+      "logo": "images/bookmaker-logo-3.svg",
+      "rating": 4.7,
+      "review_count": 45,
+      "bonus_amount": 2500,
+      "badge": "no-bonus",
+      "internal_link": "/bk/3",
+      "external_link": "https://partner3.com"
+    }
+  ]
+}
